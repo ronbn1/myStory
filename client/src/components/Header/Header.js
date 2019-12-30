@@ -66,7 +66,7 @@ const Header = ({ user, logout }) => {
           </Navbar>
         </Sticky>
 
-        <h1 className="logo">MY STORY</h1>
+        <h1 className="logo">MY-STORY</h1>
       </Hader>
     </div>
   );
