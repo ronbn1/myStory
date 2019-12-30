@@ -79,9 +79,11 @@ const CommentContainer = styled.div`
   .close {
     font-size: 1em;
     margin: 0.5em -1em 0 0;
+    cursor: pointer;
   }
   .edit {
     margin: 0.5em 1em 0 0;
+    cursor: pointer;
   }
   .editMod {
     display: flex;

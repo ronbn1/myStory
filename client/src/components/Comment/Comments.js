@@ -2,19 +2,24 @@ import React from "react";
 import { connect } from "react-redux";
 import AddComment from "./AddComment";
 import Comment from "./Comment";
-const Comments = ({ post }) => {
+import styled from "styled-components";
+const Comments = ({ comments }) => {
   return (
-    <div>
-      {post.comments.map(comment => {
+    <Container>
+      {comments.map(comment => {
         return <Comment key={comment._id} comment={comment}></Comment>;
       })}
 
       <AddComment id="addComment" />
-    </div>
+    </Container>
   );
 };
 
 const mapStateToProps = state => ({
-  post: state.post.post
+  comments: state.post.post.comments
 });
+
+const Container = styled.div`
+  margin-top: 4em;
+`;
 export default connect(mapStateToProps)(Comments);

@@ -154,14 +154,12 @@ router.delete("/comments/:postID/:commentID", verifytoken, async (req, res) => {
       i => i._id.toString() === req.params.commentID.toString()
     );
 
-    if (
-      post.author.toString() !== user._id.toString() ||
-      user.email !== "ron@benaish.com"
-    ) {
+    if (comment.author.toString() !== user._id.toString()) {
       return res
         .status(401)
         .json({ msg: "User not authorized to delete this comment" });
     }
+
     const updateComments = post.comments.filter(
       cur => cur._id.toString() !== comment._id.toString()
     );
@@ -180,15 +178,14 @@ router.put("/comments/:postID/:commentID", verifytoken, async (req, res) => {
     //Get post from DB
     const user = await User.findById(req.user._id);
     const post = await Post.findById(req.params.postID);
-
+    const comment = post.comments.find(
+      i => i._id.toString() === req.params.commentID.toString()
+    );
     const commentIndex = post.comments.findIndex(
       obj => obj._id.toString() === req.params.commentID
     );
 
-    if (
-      post.author.toString() !== user._id.toString() ||
-      user.email !== "ron@benaish.com"
-    ) {
+    if (comment.author.toString() !== user._id.toString()) {
       return res
         .status(401)
         .json({ msg: "User not authorized to update this comment" });
@@ -196,6 +193,7 @@ router.put("/comments/:postID/:commentID", verifytoken, async (req, res) => {
 
     post.comments[commentIndex].text = req.body.text;
     post.save();
+    return res.send(post);
     res.send(req.body.text);
   } catch (err) {
     console.log(err);
