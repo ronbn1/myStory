@@ -39,44 +39,42 @@ const SideNavBar = ({ user, logout }) => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon color="action" />
-          </ListItemIcon>
-          <Link smooth to="/#top">
+        <Link smooth to="/#top">
+          <ListItem button>
+            <ListItemIcon>
+              <HomeIcon color="action" />
+            </ListItemIcon>
             <ListItemText primary="Home" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <Link to="/about">
+          </ListItem>
+        </Link>
+        <Link to="/about">
+          <ListItem button>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
             <ListItemText primary="About" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <Link to="/contact">
+          </ListItem>
+        </Link>
+        <Link to="/contact">
+          <ListItem button>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
             <ListItemText primary="Contact" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          {user.user && user.user.isAdmin ? (
-            <>
+          </ListItem>
+        </Link>
+        {user.user && user.user.isAdmin ? (
+          <Link to="/addpost">
+            <ListItem button>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
-              <Link to="/addpost">
-                <ListItemText primary="Add post" />
-              </Link>
-            </>
-          ) : (
-            ""
-          )}
-        </ListItem>
+              <ListItemText primary="Add post" />
+            </ListItem>
+          </Link>
+        ) : (
+          ""
+        )}
       </List>
       <Divider />
       <List>

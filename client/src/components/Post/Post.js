@@ -42,7 +42,9 @@ const Post = ({ post, likePost, user, deletePost }) => {
         <span>By {post.name}</span>
         <h2>{post.date.slice(0, 10)}</h2>
       </div>
-      <div className="blog_content">{ReactHtmlParser(post.content)}</div>
+      <div className="blog_content">
+        {ReactHtmlParser(`${post.content.slice(0, 300)} ...`)}
+      </div>
       <div className="post_footer">
         <ReadMoreButton>
           <Link to={`post/${post._id}`}>More Read ...</Link>
