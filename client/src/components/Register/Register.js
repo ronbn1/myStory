@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { register } from "../../actions/user";
 import { useHistory } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link-offset";
-
 import {
   MDBRow,
   MDBCol,
@@ -92,4 +91,5 @@ const Register = ({ register, user: { user } }) => {
 const mapStateToProps = state => ({
   user: state.user
 });
+
 export default connect(mapStateToProps, { register })(Register);
