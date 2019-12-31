@@ -17,4 +17,4 @@ My Story is a simple blogging system that built with the mern stack, check out t
 - Logged users can post a comment.
 - Logged users can delete only comments that they post.
 - Logged users can edit their comments.
-- Admin can delete and edit comments.
+- Admin can delete and edit comments and blog posts.
