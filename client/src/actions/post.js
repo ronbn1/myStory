@@ -17,7 +17,6 @@ import {
 //GET ALL POSTS
 export const getPosts = () => async dispatch => {
   const res = await axios("/api/posts");
-  console.log(res.data);
   dispatch({
     type: GET_POSTS,
     payload: res.data
@@ -72,7 +71,6 @@ export const deletePost = id => async dispatch => {
 //GET POST'S COMMENTS
 export const getComments = id => async dispatch => {
   const comments = await axios(`/api/posts${id}/comments`);
-  console.log(comments);
   dispatch({
     type: GET_COMMENTS,
     payload: comments.data

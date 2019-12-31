@@ -35,7 +35,6 @@ const Register = ({ register, user: { user } }) => {
   const submitHandler = e => {
     e.preventDefault();
     register(formData);
-    console.log(formData);
   };
 
   return (
