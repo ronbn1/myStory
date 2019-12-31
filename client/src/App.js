@@ -13,6 +13,7 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import PostPage from "./components/Post/PostPage";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
