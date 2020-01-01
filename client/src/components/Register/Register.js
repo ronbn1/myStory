@@ -46,7 +46,7 @@ const Register = ({ register, user: { user } }) => {
               <div className="grey-text">
                 <MDBInput
                   label="Your name"
-                  icon="envelope"
+                  icon="user"
                   group
                   type="text"
                   name="name"
@@ -57,6 +57,7 @@ const Register = ({ register, user: { user } }) => {
                   label="Your email"
                   icon="envelope"
                   group
+                  type="email"
                   name="email"
                   onChange={e => onChangeForm(e)}
                 />
@@ -76,7 +77,7 @@ const Register = ({ register, user: { user } }) => {
                 </MDBBtn>
               </div>
               <p style={{ fontSize: "0.8em", color: "#37474F" }}>
-                Alreay have an acount?{" "}
+                Already have an acount?{" "}
                 <Link smooth style={{ color: "#37474F" }} to="/login#login">
                   LOGIN{" "}
                 </Link>

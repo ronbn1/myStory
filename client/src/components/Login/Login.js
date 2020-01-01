@@ -66,7 +66,7 @@ const Login = ({ login, user: { user } }) => {
                 </MDBBtn>
               </div>
               <p style={{ fontSize: "0.8em", color: "#37474F" }}>
-                Dont have an acount?
+                Don't have an acount?{" "}
                 <Link
                   smooth
                   style={{ color: "#37474F" }}

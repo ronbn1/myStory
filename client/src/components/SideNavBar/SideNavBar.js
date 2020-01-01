@@ -14,6 +14,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import HomeIcon from "@material-ui/icons/Home";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
+import InfoIcon from "@material-ui/icons/Info";
 
 const SideNavBar = ({ user, logout }) => {
   const [state, setState] = React.useState({
@@ -50,7 +51,7 @@ const SideNavBar = ({ user, logout }) => {
         <Link to="/about">
           <ListItem button>
             <ListItemIcon>
-              <InboxIcon />
+              <InfoIcon />
             </ListItemIcon>
             <ListItemText primary="About" />
           </ListItem>
