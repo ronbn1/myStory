@@ -77,7 +77,7 @@ const Register = ({ register, user: { user } }) => {
                 </MDBBtn>
               </div>
               <p style={{ fontSize: "0.8em", color: "#37474F" }}>
-                Already have an acount?{" "}
+                Already have an account?{" "}
                 <Link smooth style={{ color: "#37474F" }} to="/login#login">
                   LOGIN{" "}
                 </Link>
