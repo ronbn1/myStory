@@ -1,6 +1,6 @@
 # My Story
 
-My Story is a simple blogging system that built with the mern stack, check out the demo [here](https://my-story-blog.herokuapp.com/)
+My Story is a simple blogging system that built with the mern stack, check out the demo [here](https://my-story-blog.herokuapp.com/).
 
 # Technologies
 
