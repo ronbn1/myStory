@@ -47,7 +47,7 @@ const Post = ({ post, likePost, user, deletePost }) => {
       </div>
       <div className="post_footer">
         <ReadMoreButton>
-          <Link to={`post/${post._id}`}>More Read ...</Link>
+          <Link to={`post/${post._id}`}>Read More...</Link>
         </ReadMoreButton>
         {!user.loading && user.isAuthenticated ? (
           <div>
