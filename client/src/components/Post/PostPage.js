@@ -25,16 +25,22 @@ const PostPage = ({ post, getPostById, match, user, deletePost }) => {
       ) : (
         <div>
           <div className="post_header">
-            <h1>{`${post.title}`}</h1>
-            {!user.loading && user.user.isAdmin ? (
-              <DeleteButton onClick={() => deleteHandler()} color="elegant">
-                DELETE
-              </DeleteButton>
-            ) : (
-              ""
-            )}
+            <div className="top">
+              <h1>{post.title}</h1>
+
+              {!user.loading && user.user.isAdmin ? (
+                <DeleteButton onClick={() => deleteHandler()} color="elegant">
+                  DELETE
+                </DeleteButton>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <p>By {post.name}</p>
+            <p>{post.date.slice(0, 10)}</p>
           </div>
-          <div>{ReactHtmlParser(post.content)}</div>
+          <div className="content">{ReactHtmlParser(post.content)}</div>
           {user.isAuthenticated ? (
             <Comments />
           ) : (
@@ -62,8 +68,24 @@ const Container = styled.div`
   }
 
   .post_header {
-    display: flex;
-    justify-content: space-between;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        color: #4c5c68;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 1em;
+      font-weight: 400;
+      color: #9c9c9c;
+      text-decoration: underline;
+    }
+  }
+
+  .content {
+    margin-top: 2em;
   }
 `;
 const DeleteButton = styled(MDBBtn)`
